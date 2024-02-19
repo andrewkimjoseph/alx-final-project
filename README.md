@@ -1,11 +1,6 @@
 # CrediTouch - Engage to Convert
 ## By Andrew Kim Joseph - ALX FINAL PROJECT
 
-
-![image](https://user-images.githubusercontent.com/91619206/205617432-5d07567e-f068-45d6-a8c8-6661428f32d8.png)
-
-_Figure 1: Splash screen of the app on Nokia X!0 (Android 12)_
-
 ## PURPOSE OF THE PROJECT
 1. Adding, viewing, and deleting clients (loan-giving institutions).
 2. Adding, viewing, and deleting agents (who work for loan-giving institutions).
