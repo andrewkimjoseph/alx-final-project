@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:saapp/switchboard/continue_test.dart';
 import 'switchboard/continue.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:flutter/services.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'switchboard/onboarding.dart';
 
-int? isViewed;
 void main() async {
   // ONBOARDING SCREEN
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   ));
   WidgetsFlutterBinding.ensureInitialized();
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  isViewed = prefs.getInt('onBoard');
   // BEFORE APP LAUNCHES, CONNECTION TO THE FIREBASE DATABASE IS FIRST ESTABLISHED
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -53,17 +49,22 @@ class CrediTouch extends StatelessWidget {
     return MaterialApp(
       title: 'CrediTouch',
       theme: ThemeData(
+        // useMaterial3: true,
         colorScheme: ColorScheme.fromSwatch(
                 primarySwatch:
                     BuildMaterialColorGenerator.buildMaterialColorGenerator(
                         const Color(0xFF2b334b)))
             .copyWith(background: Colors.white),
       ),
-      home: isViewed != 0
-          ? const OnboardingScreen()
-          : const Continue(
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const Continue(
               title: 'Version 1.0',
             ),
+        '/test': (context) => const ContinueTest(
+              title: 'Version 1.0 [TEST MODE]',
+            )
+      },
     );
   }
 }
