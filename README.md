@@ -1,4 +1,9 @@
-# CrediTouch - Engage to Convert
+# CrediTouch - Engage to Convert (Mobile Web Application)
+
+Try it out here: https://creditouch.andrewkim.dev
+
+Caveat: Only optimized for Mobile Web as a PWA
+
 ## By Andrew Kim Joseph - ALX FINAL PROJECT
 
 ## PURPOSE OF THE PROJECT
